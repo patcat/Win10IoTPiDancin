@@ -87,7 +87,6 @@ namespace ServoDancin
 
         private void MotorThread(IAsyncAction action)
         {
-            //This motor thread runs on a high priority task and loops forever to pulse the motor as determined by the drive buttons
             while (true)
             {
                 if (currentDirection != 0)
@@ -95,9 +94,9 @@ namespace ServoDancin
                     servoPinA.Write(GpioPinValue.High);
                     servoPinB.Write(GpioPinValue.High);
                 }
-                //Use the wait helper method to wait for the length of the pulse
+                
                 Wait(currentDirection);
-                //The pulse if over and so set the pin to low and then wait until it's time for the next pulse
+                
                 servoPinA.Write(GpioPinValue.Low);
                 servoPinB.Write(GpioPinValue.Low);
                 Wait(PulseFrequency - currentDirection);
