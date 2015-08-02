@@ -1,5 +1,4 @@
 # Windows 10 IoT Core Pi Servo Dancer
-========
 
 A demo showing how to get two servos to move to a beat using a Raspberry Pi and Windows 10 IoT Core.
 
